@@ -85,6 +85,8 @@ function fizzBuzz(param) {
 
 // Desafio 9
 function encode(codes) {
+  // foi utilizado o comando array.from para criar um array iteravel fonte = https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/from //
+
   let letras = ['a', 'e', 'i', 'o', 'u'];
   Array.from(codes);
   for (let index = 0; index < codes.length; index += 1) {
@@ -107,8 +109,19 @@ function decode(codes) {
 }
 
 // Desafio 10
-function techList() {
-  // seu código aqui
+function techList(lista, nomes) {
+  let sortLista = [];
+  if (lista[0] == undefined) {
+    return 'Vazio!';
+  }
+  lista.sort();
+  for (let index = 0; index < lista.length; index += 1) {
+    sortLista.push({
+      tech: lista[index],
+      name: nomes,
+    });
+  }
+  return sortLista;
 }
 
 module.exports = {
