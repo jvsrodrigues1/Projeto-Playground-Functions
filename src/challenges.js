@@ -29,7 +29,19 @@ function footballPoints(wins, ties) {
 
 // Desafio 6
 function highestCount(numbers) {
-  // seu código aqui
+  //Codigo referenciado do exercicio 5 - Bloco 4.4//
+  let numRepetido = numbers[0];
+  let count = 0;
+  for (let index = 0; index < numbers.length; index += 1) {
+    if (numRepetido < numbers[index]) {
+      numRepetido = numbers[index];
+      count = 0;
+    }
+    if (numRepetido === numbers[index]) {
+      count += 1;
+    }
+  }
+  return count;
 }
 
 // Desafio 7
