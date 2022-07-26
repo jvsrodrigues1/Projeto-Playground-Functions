@@ -21,7 +21,8 @@ function splitSentence(goTrybe) {
 // Desafio 4
 function concatName(words) {
   let nomesConcat = [words[words.length - 1], words[0]];
-  return nomesConcat;
+  let concatVirgula = nomesConcat.join(', ');
+  return concatVirgula;
 }
 
 // Desafio 5
