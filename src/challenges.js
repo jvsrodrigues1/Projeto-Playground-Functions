@@ -1,7 +1,11 @@
 // Desafio 1
 function compareTrue(a, b) {
-  if (a && b) return true;
-  return false;
+  if (a && b) {
+    return true;
+  }
+  if (a === false || b === false) {
+    return false;
+  }
 }
 
 // Desafio 2
@@ -45,8 +49,20 @@ function highestCount(numbers) {
 }
 
 // Desafio 7
-function catAndMouse() {
-  // seu código aqui
+function catAndMouse(mouse, cat1, cat2) {
+  // foi comentado na mentoria que um dos valores poderia estar dando um valor negativo. A solucao que encontrei foi atraves do comando math.abs referencia = https://stackoverflow.com/questions/4652104/convert-a-negative-number-to-a-positive-one-in-javascript //
+  const distanciaCat1 = Math.abs(cat1 - mouse);
+  const distanciaCat2 = Math.abs(cat2 - mouse);
+
+  if (distanciaCat1 > distanciaCat2) {
+    return 'cat2';
+  }
+  if (distanciaCat2 > distanciaCat1) {
+    return 'cat1';
+  }
+  if (distanciaCat2 == distanciaCat1) {
+    return 'os gatos trombam e o rato foge';
+  }
 }
 
 // Desafio 8
