@@ -69,6 +69,7 @@ function catAndMouse(mouse, cat1, cat2) {
 
 // Desafio 8
 function fizzBuzz(param) {
+  // foi utizidado o parametro .map para percorrer o array e devolver um array com o mesmo tamanho e os elementos abaixo iterados, fonte = https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/map //
   return param.map((numero) => {
     if (numero % 3 === 0 && numero % 5 === 0) {
       return 'fizzBuzz';
@@ -85,33 +86,37 @@ function fizzBuzz(param) {
 
 // Desafio 9
 function encode(codes) {
-  // foi utilizado o comando array.from para criar um array iteravel fonte = https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/from //
-
-  let letras = ['a', 'e', 'i', 'o', 'u'];
-  Array.from(codes);
-  for (let index = 0; index < codes.length; index += 1) {
-    for (let index2 = 0; index2 < letras.length; index2 += 1) {
-      codes = codes.replace(letras[index2], index2 + 1);
+  const vogais = ['a', 'e', 'i', 'o', 'u'];
+  let resultado = '';
+  for (const char of codes) {
+    if (vogais.includes(char)) {
+      resultado += vogais.indexOf(char) + 1;
+    } else {
+      resultado += char;
     }
   }
-  return codes;
+  return resultado;
 }
-function decode(codes) {
-  let vogais = ['a', 'e', 'i', 'o', 'u'];
-  let subNumeros = ['1', '2', '3', '4', '5'];
 
-  for (let index = 0; index < codes.length; index += 1) {
-    for (let index2 = 0; index2 < subNumeros.length; index2 += 1) {
-      codes = codes.replace(subNumeros[index2], vogais[index2]);
+function decode(codes) {
+  const vogais = ['a', 'e', 'i', 'o', 'u'];
+  const numeros = ['1', '2', '3', '4', '5'];
+  let resultado = '';
+  for (const char of codes) {
+    if (numeros.includes(char)) {
+      const posicaoDoNumero = numeros.indexOf(char);
+      resultado += vogais[posicaoDoNumero];
+    } else {
+      resultado += char;
     }
   }
-  return codes;
+  return resultado;
 }
 
 // Desafio 10
 function techList(lista, nomes) {
   let sortLista = [];
-  if (lista[0] == undefined) {
+  if (lista[0] === undefined) {
     return 'Vazio!';
   }
   lista.sort();
