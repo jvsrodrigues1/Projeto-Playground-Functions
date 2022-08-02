@@ -57,8 +57,13 @@ function triangleCheck(lineA, lineB, lineC) {
 }
 
 // Desafio 13
-function hydrate() {
+function hydrate(mensagem) {
   // seu código aqui
+  const regex = /\d+/g;
+  const matches = mensagem.match(regex);
+  const soma = matches.reduce((acc, curr) => Number(acc) + Number(curr));
+  if (soma === '1') return '1 copo de água';
+  return `${soma} copos de água`;
 }
 
 module.exports = {
