@@ -41,7 +41,7 @@ function generatePhoneNumber(phones) {
   );
 }
 // Desafio 12
-function triangleCheck() {
+function triangleCheck(lineA, lineB, lineC) {
   // seu código aqui
   const checkLados = (lineA, lineB, lineC) =>
     lineA < lineB + lineC && lineB < lineA + lineC && lineC < lineA + lineB;
@@ -51,11 +51,9 @@ function triangleCheck() {
     lineB > Math.abs(lineA - lineC) &&
     lineC > Math.abs(lineA - lineB);
 
-  function triangleCheck(lineA, lineB, lineC) {
-    if (!checkLados(lineA, lineB, lineC)) return false;
-    if (!checkPositivos(lineA, lineB, lineC)) return false;
-    return true;
-  }
+  if (!checkLados(lineA, lineB, lineC)) return false;
+  if (!checkPositivos(lineA, lineB, lineC)) return false;
+  return true;
 }
 
 // Desafio 13
